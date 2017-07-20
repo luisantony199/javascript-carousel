@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>So im learning javascript</title>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+    $("#slideshow > div:gt(0)").hide();
+    setInterval(function() {
+      $('#slideshow > div:first')
+      .fadeIn(2000)
+      .next()
+      .fadeOut(1000)
+      .end()
+      .appendTo('#slideshow');
+    },3000);
+</script>
+<style media="screen">
+  #slideshow > div{
+    position: absolute;
+    top: 15%;
+    left: 0;
+    right:0;
+    bottom:0;
+  }
+  body{
+    background-color: black;
+  }
+</style>
+</head>
+<body>
+  <div id="slideshow">
+    <div><img src="img/pic1.jpg" alt="a picture of new york" width="100%" height="auto"></div>
+    <div><img src="img/pic2.jpg" alt="a picture of new york" width="100%" height="auto"></div>
+    <div><img src="img/pic3.jpg" alt="a picture of new york" width="100%" height="auto"></div>
+  </div>
+</body>
+
+</html>
